@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu';
 import heroImage from '@/assets/hero-kitchen.jpg';
 
 const Hero = () => {
@@ -42,10 +48,28 @@ const Hero = () => {
           </p>
 
           <div className="animate-fade-up animation-delay-400 flex flex-col sm:flex-row gap-4">
-            <Button variant="cta" size="xl" className="group">
-              Order Now
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="cta" size="xl" className="group gap-2">
+                  Order Now
+                  <ChevronDown size={18} className="group-hover:translate-y-0.5 transition-transform" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-48">
+                <DropdownMenuItem asChild>
+                  <a href="https://www.swiggy.com/restaurants/gully-bowls" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 cursor-pointer py-2">
+                    <span className="w-6 h-6 rounded bg-brand-orange text-white text-sm font-bold flex items-center justify-center">S</span>
+                    Order on Swiggy
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="https://www.zomato.com/restaurants/gully-bowls" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 cursor-pointer py-2">
+                    <span className="w-6 h-6 rounded bg-red-500 text-white text-sm font-bold flex items-center justify-center">Z</span>
+                    Order on Zomato
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Button variant="heroOutline" size="xl" className="group border-white/30 text-white hover:bg-white/10">
               <Play size={18} className="mr-1" />
               View Menu

@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -59,9 +65,28 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="cta" size="lg">
-              Order Now
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="cta" size="lg" className="gap-1">
+                  Order Now
+                  <ChevronDown size={16} />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-44">
+                <DropdownMenuItem asChild>
+                  <a href="https://www.swiggy.com/restaurants/gully-bowls" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 cursor-pointer">
+                    <span className="w-5 h-5 rounded bg-brand-orange text-white text-xs font-bold flex items-center justify-center">S</span>
+                    Order on Swiggy
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="https://www.zomato.com/restaurants/gully-bowls" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 cursor-pointer">
+                    <span className="w-5 h-5 rounded bg-red-500 text-white text-xs font-bold flex items-center justify-center">Z</span>
+                    Order on Zomato
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Mobile Menu Button */}
@@ -94,9 +119,20 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="cta" size="lg" className="mt-2">
-                Order Now
-              </Button>
+              <div className="flex flex-col gap-2 mt-2">
+                <a href="https://www.swiggy.com/restaurants/gully-bowls" target="_blank" rel="noopener noreferrer">
+                  <Button variant="cta" size="lg" className="w-full gap-2">
+                    <span className="w-5 h-5 rounded bg-white/20 text-white text-xs font-bold flex items-center justify-center">S</span>
+                    Order on Swiggy
+                  </Button>
+                </a>
+                <a href="https://www.zomato.com/restaurants/gully-bowls" target="_blank" rel="noopener noreferrer">
+                  <Button variant="ctaGreen" size="lg" className="w-full gap-2">
+                    <span className="w-5 h-5 rounded bg-white/20 text-white text-xs font-bold flex items-center justify-center">Z</span>
+                    Order on Zomato
+                  </Button>
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

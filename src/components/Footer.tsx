@@ -51,16 +51,34 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-primary-foreground">Order From</h4>
             <ul className="space-y-2">
-              {['Swiggy', 'Zomato', 'Direct Order'].map((platform) => (
-                <li key={platform}>
-                  <a
-                    href="#"
-                    className="text-primary-foreground/60 hover:text-secondary transition-colors"
-                  >
-                    {platform}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a
+                  href="https://www.swiggy.com/restaurants/gully-bowls"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-foreground/60 hover:text-brand-orange transition-colors"
+                >
+                  Swiggy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.zomato.com/restaurants/gully-bowls"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-foreground/60 hover:text-red-400 transition-colors"
+                >
+                  Zomato
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+919876543210"
+                  className="text-primary-foreground/60 hover:text-secondary transition-colors"
+                >
+                  Call to Order
+                </a>
+              </li>
             </ul>
           </div>
         </div>
