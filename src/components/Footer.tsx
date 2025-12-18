@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import { Instagram, MessageCircle } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer = () => {
   return (
@@ -7,9 +9,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl font-bold text-primary">Gully</span>
-              <span className="text-2xl font-bold text-secondary">Bowls</span>
+            <div className="mb-4">
+              <Logo />
             </div>
             <p className="text-primary-foreground/60 max-w-sm mb-6">
               Fresh Indian bowls made your way. Fast, flavorful, and always fresh.
@@ -34,16 +35,26 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-primary-foreground">Quick Links</h4>
             <ul className="space-y-2">
-              {['Menu', 'Our Kitchen', 'How It Works', 'Contact'].map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
-                    className="text-primary-foreground/60 hover:text-primary transition-colors"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link to="/menu" className="text-primary-foreground/60 hover:text-primary transition-colors">
+                  Menu
+                </Link>
+              </li>
+              <li>
+                <a href="#kitchen" className="text-primary-foreground/60 hover:text-primary transition-colors">
+                  Our Kitchen
+                </a>
+              </li>
+              <li>
+                <a href="#how-it-works" className="text-primary-foreground/60 hover:text-primary transition-colors">
+                  How It Works
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="text-primary-foreground/60 hover:text-primary transition-colors">
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 

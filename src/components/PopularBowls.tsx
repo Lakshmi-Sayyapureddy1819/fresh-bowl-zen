@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 import bowlChicken from '@/assets/bowl-chicken.jpg';
@@ -53,13 +54,15 @@ const PopularBowls = () => {
               Popular Bowls
             </h2>
           </div>
-          <Button variant="ghost" className="mt-4 md:mt-0 text-primary group">
-            View Full Menu
-            <ArrowRight
-              size={18}
-              className="group-hover:translate-x-1 transition-transform"
-            />
-          </Button>
+          <Link to="/menu">
+            <Button variant="ghost" className="mt-4 md:mt-0 text-primary group">
+              View Full Menu
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </Button>
+          </Link>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
