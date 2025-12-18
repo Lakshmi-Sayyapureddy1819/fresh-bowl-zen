@@ -92,8 +92,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground">Call Us</p>
-                    <a href="tel:+919876543210" className="font-semibold text-foreground hover:text-primary transition-colors">
-                      +91 98765 43210
+                    <a href="tel:+916301750186" className="font-semibold text-foreground hover:text-primary transition-colors">
+                      +91 63017 50186
                     </a>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ const Contact = () => {
             </div>
 
             <a 
-              href="https://wa.me/919876543210?text=Hi!%20I%20want%20to%20order%20from%20Gully%20Bowls" 
+              href="https://wa.me/916301750186?text=Hi!%20I%20want%20to%20order%20from%20Gully%20Bowls" 
               target="_blank" 
               rel="noopener noreferrer"
             >
